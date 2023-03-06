@@ -1,5 +1,6 @@
 # Home Surveillance Video Capture, Compression and Transmission Project
-This project involves capturing, compressing, and transmitting surveillance video from a laptop webcam to an AWS S3 bucket. The code is written in Python using OpenCV and the boto3 library.
+This project involves capturing, compressing, and transmitting surveillance video from a laptop webcam to an AWS S3 bucket. 
+The code is written in Python using OpenCV and the boto3 library. 
 
 ## Requirements
 * Python 3.7 or higher
@@ -32,19 +33,17 @@ pip install boto3
 ## Usage
 1. Run the multipleVideo.py script to capture video from your camera:
 ````
-python surveillance_video_capture.py
+python multipleVideo.py
 ````
 2. Press Esc to stop the video capture.
-
 3. The captured video is saved in the specified format (.avi or .mp4) with the specified resolution and frame rate.
-
 4. The captured video is automatically uploaded to your AWS S3 bucket using the upload_to_s3.py script
 however multipleVideo.py simultaneously uploads the video to AWS S3 after saving the video.
-
 5. The uploaded video can be accessed from your AWS S3 bucket.
 
 ## Credits
 This project was created by Varun Naik. Feel free to use and modify the code for your own projects.
+This project was done a part of the Multimedia Communications ELG 5121/CSI7163 course at uOttawa.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
