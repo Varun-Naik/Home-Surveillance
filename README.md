@@ -23,8 +23,9 @@ pip install boto3
 ```
 
 3. Install FFmpeg libraries by following the steps mentioned in this [tutorial](https://phoenixnap.com/kb/ffmpeg-windows).
-4. Set up your AWS credentials:
 
+
+4. Set up your AWS credentials:
 - Create an AWS account if you don't have one already.
 - Set up an S3 bucket.
 - Create an access key and a secret access key with the necessary permissions to access the bucket.
