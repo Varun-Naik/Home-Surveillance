@@ -1,10 +1,11 @@
 # Home Surveillance Video Capture, Compression and Transmission Project
 This project involves capturing, compressing, and transmitting surveillance video from a laptop webcam to an AWS S3 bucket. 
-The code is written in Python using OpenCV and the boto3 library. 
+The code is written in Python using OpenCV, FFmpeg and the boto3 library. 
 
 ## Requirements
 * Python 3.7 or higher
 * OpenCV 4.0 or higher
+* FFmpeg libraries
 * AWS account with an S3 bucket set up
 * boto3 library (for uploading to AWS S3)
 
@@ -15,8 +16,7 @@ The code is written in Python using OpenCV and the boto3 library.
 ```
 git clone https://github.com/Varun-Naik/Home-Surveillance.git
 ```
-
-1. Install the required packages:
+2. Install the required packages:
 ```
 pip install opencv-python
 pip install boto3
@@ -29,6 +29,7 @@ pip install boto3
 - Create an access key and a secret access key with the necessary permissions to access the bucket.
 - Configure your AWS credentials by running aws configure in your terminal and entering your access key and secret access key.
 
+4. Install FFmpeg libraries by following the steps mentioned in this (tutorial)[https://phoenixnap.com/kb/ffmpeg-windows].
 
 ## Usage
 1. Run the multipleVideo.py script to capture video from your camera:

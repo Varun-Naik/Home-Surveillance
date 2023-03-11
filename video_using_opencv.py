@@ -1,13 +1,13 @@
-import numpy as np
+#import numpy as np
 import os
 import cv2
 import boto3
 
-# filename = 'avi_sample_video.avi'
-filename = 'mp4_sample_video.mp4'
+filename = 'output.avi'
+#filename = 'output.mp4'
 frames_per_second = 24.0
-# res = '480p'
-res = '720p'
+res = '480p'
+#res = '720p'
 
 
 # Set resolution for the video capture
@@ -42,7 +42,7 @@ def get_dims(cap, res='1080p'):
 VIDEO_TYPE = {
     'avi': cv2.VideoWriter_fourcc(*'XVID'),
     # 'mp4': cv2.VideoWriter_fourcc(*'H264'),
-    'mp4': cv2.VideoWriter_fourcc(*'XVID'),
+    'mp4': cv2.VideoWriter_fourcc(*'mp4v'),
 }
 
 
@@ -51,9 +51,9 @@ def get_video_type(filename):
     filename, ext = os.path.splitext(filename)
     if ext in VIDEO_TYPE:
         return VIDEO_TYPE[ext]
-    return VIDEO_TYPE['avi']
+    return VIDEO_TYPE['mp4']
 
-
+print(get_video_type(filename))
 cap = cv2.VideoCapture(0)
 out = cv2.VideoWriter(filename, get_video_type(filename), 25, get_dims(cap, res))
 
@@ -68,13 +68,3 @@ cap.release()
 out.release()
 cv2.destroyAllWindows()
 
-# upload files to AWS S3 bucket
-s3 = boto3.client('s3',
-                  aws_access_key_id='AKIA54ZHVIHWKDTM3N7M',
-                  aws_secret_access_key='M8y42VvpzjKf3LJ2FSTiNuIUKFWFHJlfl6OBiZOr')
-
-bucket_name = 'mmc-video-bucket'
-file_path = 'E:\Programming files\Home-Surveillance\mp4_sample_video.mp4'
-object_key = 'mp4_sample_video.mp4'
-
-s3.upload_file(file_path, bucket_name, object_key)
